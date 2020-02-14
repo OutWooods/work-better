@@ -6,9 +6,11 @@ This is just basic website that I hope will make sure I focus on my work more.
 
 #### Things I'm planning to have
 
-[] A timer
+see [features](features.md) for more plans
 
-[] Links to a few good bits of background noise
+[x] A timer
+
+[x] Links to a few good bits of background noise
 
 [] Few useful lines to remind me to focus
 

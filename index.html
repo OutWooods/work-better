@@ -11,7 +11,6 @@
     <input id='start' type='button' value='start' />
     <input id='stop' type='button' value='stop' style="display: none" />
     <div>
-
         <p>
             Reviews of the three noises I've chosen.
         </p>
@@ -49,6 +48,7 @@
                     clearInterval(x);
                 }
 
+                document.title = 'RUNNING';
                 const endTime = new Date();
                 endTime.setMinutes(endTime.getMinutes() + 30)
 
@@ -61,10 +61,13 @@
 
                     if (remainingTime < 0) {
                         clearInterval(x);
-                        document.getElementById("timer").innerHTML = "COMPLETE";
+                        const ding = new Audio('type-writer-ding.wav');
+                        document.getElementById("timer").innerHTML = 'COMPLETE';
                         const stop = document.getElementById('stop');
                         stop.style.display = 'none';
                         event.target.style.display = '';
+                        document.title = 'COMPLETE';
+                        ding.play()
                         return;
                     }
 
@@ -90,6 +93,7 @@
                 }
 
                 document.getElementById("timer").innerHTML = "STOPPED";
+                document.title = 'STOPPED';
                 const start = document.getElementById('start');
                 start.style.display = '';
                 event.target.style.display = 'none';
