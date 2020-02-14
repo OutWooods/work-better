@@ -10,13 +10,14 @@
     <p>My first paragraph.</p>
     <p id='timer'></p>
     <input id='start' type='button' value='start' />
+    <input id='stop' type='button' value='stop' style="display: none" />
 </body>
 <script>
     window.addEventListener('load', () => {
         var x = undefined
 
         document.getElementById('start').onclick =
-            () => {
+            (event) => {
                 if (!!x) {
                     clearInterval(x);
                 }
@@ -34,6 +35,9 @@
                     if (remainingTime < 0) {
                         clearInterval(x);
                         document.getElementById("timer").innerHTML = "COMPLETE";
+                        const stop = document.getElementById('stop');
+                        stop.style.display = 'none';
+                        event.target.style.display = '';
                         return;
                     }
 
@@ -45,7 +49,24 @@
                     }
 
                     document.getElementById('timer').innerHTML = time;
+
+                    const stop = document.getElementById('stop');
+                    stop.style.display = '';
+                    event.target.style.display = 'none';
                 }, 500);
+            }
+
+        document.getElementById('stop').onclick =
+            (event) => {
+                if (!!x) {
+                    clearInterval(x);
+                }
+
+                document.getElementById("timer").innerHTML = "STOPPED";
+                const start = document.getElementById('start');
+                start.style.display = '';
+                event.target.style.display = 'none';
+                return;
             }
     })
 </script>
