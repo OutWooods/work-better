@@ -15,6 +15,7 @@ window.addEventListener('load', () => {
 
             document.title = 'RUNNING';
             const endTime = new Date();
+            const startTime = new Date();
             endTime.setMinutes(endTime.getMinutes() + 0)
 
             countDown = setInterval(() => {
@@ -26,8 +27,8 @@ window.addEventListener('load', () => {
 
                 if (remainingTime < 0) {
                     clearInterval(countDown);
+                    completeTask(focusArea, startTime, endTime)
                     const ding = new Audio('type-writer-ding.wav');
-                    changeCount(focusArea.id);
                     document.getElementById("timer").innerHTML = 'COMPLETE';
                     const stop = document.getElementById('stop');
                     stop.style.display = 'none';

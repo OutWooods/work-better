@@ -5,20 +5,6 @@ window.addEventListener('load', () => {
         document.getElementById('focus-info').style.display = '';
     }
 
-    const createButton = (clickEvent, extras = {}) => {
-        const { feather, innerHTML } = extras;
-        const button = document.createElement('button');
-        button.onclick = clickEvent;
-        if (feather) {
-            featherIcon = document.createElement('i')
-            featherIcon.dataset.feather = feather
-            button.appendChild(featherIcon);
-        } else {
-            button.innerHTML = innerHTML;
-        }
-        return button;
-    }
-
     document.getElementById('add-new-focus').onclick = (event) => {
         const newFocus = document.getElementById('new-focus').value;
 

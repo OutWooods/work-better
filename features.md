@@ -22,17 +22,17 @@
 
 - Can pause time
 
+- Make the advice/comments hideable (maybe in the corner, a 'clear view' options)
+
+- The head tab says which task and count
+
 ## Mulling over
 
 - Can type in goal at top
 
 - Second, slightly louder sound if not noticed a minute later
 
-- Better name for focus areas
-
-- Make the advice/comments hideable (maybe in the corner, a 'clear view' options)
-
-- The head tab says which task and count
+- Better name for focus areas (dont want to use the word task - might go with jobs)
 
 - Have a log for the day of completed cycles (Task, Time, start and end, check count). Maybe optional logger of things.
 
@@ -51,3 +51,7 @@
 - Add some backend to store values
 
 - Some sort of change log for features
+
+## Bugs
+
+- Ding isnt working

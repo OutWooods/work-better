@@ -28,6 +28,9 @@
     <input id='start' type='button' value='start' />
     <input id='stop' type='button' value='stop' style="display: none" />
     <br />
+    <div id='completed-areas' style='display: none'>
+        <h2>Completed Tasks</h2>
+    </div>
     <div>
         <h2>Focus areas cycle count</h2>
         <div id="focus-areas">
@@ -75,6 +78,7 @@
 <script>
     var focusArea = undefined;
     var areasOfFocus = [];
+    var completedTasks = [];
 
     const changeCount = (index, amount = 1) => {
         const newCount = areasOfFocus[index].count + amount;
@@ -87,6 +91,36 @@
         areasOfFocus[index].count = 0;
         document.getElementById(`count-${index}`).innerHTML = 0;
     }
+
+    const createButton = (clickEvent, extras = {}) => {
+        const { feather, innerHTML } = extras;
+        const button = document.createElement('button');
+        button.onclick = clickEvent;
+        if (feather) {
+            featherIcon = document.createElement('i')
+            featherIcon.dataset.feather = feather
+            button.appendChild(featherIcon);
+        } else {
+            button.innerHTML = innerHTML;
+        }
+        return button;
+    }
+
+    const completeTask = (task, start, end) => {
+        const taskData = {
+            start,
+            end,
+            name: task.name,
+        }
+
+        changeCount(task.id);
+        completedTasks.push(taskData);
+        const completedTask = document.createElement('div')
+        completedTask.innerHTML = taskData.name;
+        document.getElementById('completed-areas').style.display = '';
+        document.getElementById('completed-areas').appendChild(completedTask);
+    }
+
 </script>
 <script src="counter.js"></script>
 <script src="timer.js"></script>
