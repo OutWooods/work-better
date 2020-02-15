@@ -23,6 +23,16 @@
     <input id='start' type='button' value='start' />
     <input id='stop' type='button' value='stop' style="display: none" />
     <div>
+        <p>Focus areas</p>
+        <div id="focus-areas">
+        </div>
+        <form>
+            <span>New focus:</span>
+            <input type="text" id="new-focus" />
+            <input id='add-new-focus' type='button' value='create' />
+        </form>
+    </div>
+    <div>
         <p>
             Reviews of the three noises I've chosen.
         </p>
@@ -54,6 +64,31 @@
         <a href="https://github.com/Tagrand/work-better" target="_blank" rel="noopener noreferrer">Source code</a>
     </div>
 </body>
+<script>feather.replace()</script>
 <script src="timer.js"></script>
+<script>
+    window.addEventListener('load', () => {
+        var areasOfFocus = [];
+
+        document.getElementById('add-new-focus').onclick = (event) => {
+
+            const newFocus = document.getElementById('new-focus').value;
+
+            if (newFocus !== '' && !areasOfFocus.includes(newFocus)) {
+                areasOfFocus.push(newFocus)
+                const focus = document.createElement('div');
+                const text = document.createElement('p');
+                const add = document.createElement('i');
+                add.dataset.feather = 'plus';
+                text.innerHTML = newFocus;
+                focus.appendChild(text)
+                focus.appendChild(add)
+                document.getElementById('focus-areas').appendChild(focus);
+                document.getElementById('new-focus').value = '';
+                feather.replace();
+            }
+        }
+    })
+</script>
 
 </html>
