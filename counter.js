@@ -5,6 +5,20 @@ window.addEventListener('load', () => {
         document.getElementById('focus-info').style.display = '';
     }
 
+    const createButton = (clickEvent, extras = {}) => {
+        const { feather, innerHTML } = extras;
+        const button = document.createElement('button');
+        button.onclick = clickEvent;
+        if (feather) {
+            featherIcon = document.createElement('i')
+            featherIcon.dataset.feather = feather
+            button.appendChild(featherIcon);
+        } else {
+            button.innerHTML = innerHTML;
+        }
+        return button;
+    }
+
     document.getElementById('add-new-focus').onclick = (event) => {
         const newFocus = document.getElementById('new-focus').value;
 
@@ -15,23 +29,12 @@ window.addEventListener('load', () => {
             const text = document.createElement('span');
             const countName = document.createElement('span');
             const count = document.createElement('span');
-            const plusButton = document.createElement('button');
-            const minusButton = document.createElement('button');
-            const setAsFocus = document.createElement('button');
-            setAsFocus.innerHTML = 'setAsFocus';
-            setAsFocus.onclick = () => { setFocus(index) };
-            const plus = document.createElement('i');
-            plus.dataset.feather = 'plus';
-            const minus = document.createElement('i');
-            minus.dataset.feather = 'minus';
-            plusButton.onclick = () => { changeCount(index) };
-            minusButton.onclick = () => { changeCount(index, -1) };
-            text.innerHTML = newFocus;
+            const plusButton = createButton(() => { changeCount(index) }, { feather: 'plus' })
+            const minusButton = createButton(() => { changeCount(index, -1) }, { feather: 'minus' })
+            const setAsFocus = createButton(() => { setFocus(index) }, { innerHTML: 'Set as focus' })
             countName.innerHTML = ' count: ';
             count.innerHTML = '0';
             count.id = `count-${index}`
-            plusButton.appendChild(plus);
-            minusButton.appendChild(minus);
             focus.appendChild(text);
             focus.appendChild(countName);
             focus.appendChild(count);
