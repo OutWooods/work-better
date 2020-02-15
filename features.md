@@ -10,6 +10,8 @@
 
 - Page title changes when time is running or complete
 
+- Can log different 'focus areas' <- want a better name. With increase/decrease counts
+
 ## Planned
 
 - Style it a bit more presentably
@@ -18,8 +20,6 @@
 
 - Can pause time
 
-- Can log different units of work - maybe buttons? with a counter
-
 ## Considering
 
 - Can type in goal at top
@@ -27,6 +27,8 @@
 - Some sort of change log
 
 - Second, slightly louder sound if not noticed a minute later
+
+- Better name for focus areas
 
 ## Technical work
 
