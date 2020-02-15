@@ -8,7 +8,7 @@
 
 <body>
     <h1>Use time well</h1>
-    <p>A few tips on this site. Take or leave as you wish</p>
+    <h2>A few tips on this site. Take or leave as you wish</h2>
     <p>
         Trust the timer. Ideally avoid looking back on it. If you need to. Pay attention as you click. You'll see a
         RUNNING message on the tab. The reason for this is that the more time you think and check the time, the more
@@ -19,11 +19,17 @@
         Music is distracting, making decisions about it is distracting. But sometimes you do need something to ramp you
         up. There are three tracks, but working in silence is surprisingly pleasant if you can.
     </p>
-    <p id='timer'>30m 0s</p>
+    <h2>Timer</h2>
+    <div>
+        <span id='timer'>30m 0s</span>
+        <span style='display: none;' id='focus-info'> Current focus: </span>
+        <span id='focus-area'></span>
+    </div>
     <input id='start' type='button' value='start' />
     <input id='stop' type='button' value='stop' style="display: none" />
+    <br />
     <div>
-        <p>Focus areas cycle count</p>
+        <h2>Focus areas cycle count</h2>
         <div id="focus-areas">
         </div>
         <form>
@@ -32,10 +38,9 @@
             <input id='add-new-focus' type='button' value='create' />
         </form>
     </div>
+    <br />
     <div>
-        <p>
-            Reviews of the three noises I've chosen.
-        </p>
+        <h2>Reviews of the three noises I've chosen</h2>
         <p>
             <a href="https://coffitivity.com" target="_blank" rel="noopener noreferrer">Coffivity</a>
             Coffinity - sound of cafe, more loud. Very effective if you're working in a noisey place, as it makes
@@ -45,12 +50,14 @@
         <p>
             <a href="https://www.noisli.com" target="_blank" rel="noopener noreferrer">Nosili</a>
             Noisli - Mix and match sounds from the site. Also has a timer too. Need an account to access,
-            and can be a bit distracting to find the perfect mix of sounds. More if you want to get some space and feel
+            and can be a bit distracting to find the perfect mix of sounds. More if you want to get some space and
+            feel
             a bit more alone. My more introverted work music.
             Top combo - rain, thunder and brown noise.
         </p>
         <p>
-            <a href="https://www.youtube.com/watch?v=-FlxM_0S2lA" target="_blank" rel="noopener noreferrer">Lofi hip hop
+            <a href="https://www.youtube.com/watch?v=-FlxM_0S2lA" target="_blank" rel="noopener noreferrer">Lofi hip
+                hop
                 mix</a>
             Lofi hip hop mix - nice, main risk is this is a youtube video and the video is a bit distracting. But is
             nice and relaxing to work to. 2 hours of music.
@@ -65,7 +72,23 @@
     </div>
 </body>
 <script>feather.replace()</script>
-<script src="timer.js"></script>
+<script>
+    var focusArea = undefined;
+    var areasOfFocus = [];
+
+    const changeCount = (index, amount = 1) => {
+        const newCount = areasOfFocus[index].count + amount;
+        if (newCount >= 0) {
+            areasOfFocus[index].count = newCount
+            document.getElementById(`count-${index}`).innerHTML = areasOfFocus[index].count;
+            return;
+        }
+
+        areasOfFocus[index].count = 0;
+        document.getElementById(`count-${index}`).innerHTML = 0;
+    }
+</script>
 <script src="counter.js"></script>
+<script src="timer.js"></script>
 
 </html>

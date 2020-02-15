@@ -1,5 +1,7 @@
 window.addEventListener('load', () => {
     var countDown = undefined
+    var startLength = 30;
+    var minutes = 30;
 
     document.getElementById('start').onclick =
         (event) => {
@@ -7,9 +9,13 @@ window.addEventListener('load', () => {
                 clearInterval(countDown);
             }
 
+            if (!focusArea) {
+                return alert('Please add a focus!')
+            }
+
             document.title = 'RUNNING';
             const endTime = new Date();
-            endTime.setMinutes(endTime.getMinutes() + 30)
+            endTime.setMinutes(endTime.getMinutes() + 0)
 
             countDown = setInterval(() => {
                 const remainingTime = endTime - new Date();
@@ -21,6 +27,7 @@ window.addEventListener('load', () => {
                 if (remainingTime < 0) {
                     clearInterval(countDown);
                     const ding = new Audio('type-writer-ding.wav');
+                    changeCount(focusArea.id);
                     document.getElementById("timer").innerHTML = 'COMPLETE';
                     const stop = document.getElementById('stop');
                     stop.style.display = 'none';
@@ -43,6 +50,20 @@ window.addEventListener('load', () => {
                 stop.style.display = '';
                 event.target.style.display = 'none';
             }, 500);
+        }
+
+    document.getElementById('stop').onclick =
+        (event) => {
+            if (!!countDown) {
+                clearInterval(countDown);
+            }
+
+            document.getElementById("timer").innerHTML = "STOPPED";
+            document.title = 'STOPPED';
+            const start = document.getElementById('start');
+            start.style.display = '';
+            event.target.style.display = 'none';
+            return;
         }
 
     document.getElementById('stop').onclick =

@@ -1,16 +1,8 @@
 window.addEventListener('load', () => {
-    var areasOfFocus = [];
-
-    const changeCount = (index, amount = 1) => {
-        const newCount = areasOfFocus[index].count + amount;
-        if (newCount >= 0) {
-            areasOfFocus[index].count = newCount
-            document.getElementById(`count-${index}`).innerHTML = areasOfFocus[index].count;
-            return;
-        }
-
-        areasOfFocus[index].count = 0;
-        document.getElementById(`count-${index}`).innerHTML = 0;
+    const setFocus = (index) => {
+        focusArea = areasOfFocus[index];
+        document.getElementById('focus-area').innerHTML = focusArea.name;
+        document.getElementById('focus-info').style.display = '';
     }
 
     document.getElementById('add-new-focus').onclick = (event) => {
@@ -18,13 +10,16 @@ window.addEventListener('load', () => {
 
         if (newFocus !== '' && !areasOfFocus.includes(newFocus)) {
             const index = areasOfFocus.length;
-            areasOfFocus.push({ name: newFocus, count: 0 })
+            areasOfFocus.push({ name: newFocus, count: 0, id: index })
             const focus = document.createElement('div');
             const text = document.createElement('span');
             const countName = document.createElement('span');
             const count = document.createElement('span');
             const plusButton = document.createElement('button');
             const minusButton = document.createElement('button');
+            const setAsFocus = document.createElement('button');
+            setAsFocus.innerHTML = 'setAsFocus';
+            setAsFocus.onclick = () => { setFocus(index) };
             const plus = document.createElement('i');
             plus.dataset.feather = 'plus';
             const minus = document.createElement('i');
@@ -42,6 +37,7 @@ window.addEventListener('load', () => {
             focus.appendChild(count);
             focus.appendChild(plusButton);
             focus.appendChild(minusButton);
+            focus.appendChild(setAsFocus);
             document.getElementById('focus-areas').appendChild(focus);
             document.getElementById('new-focus').value = '';
             feather.replace();
