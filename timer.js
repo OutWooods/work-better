@@ -1,17 +1,17 @@
 window.addEventListener('load', () => {
-    var x = undefined
+    var countDown = undefined
 
     document.getElementById('start').onclick =
         (event) => {
-            if (!!x) {
-                clearInterval(x);
+            if (!!countDown) {
+                clearInterval(countDown);
             }
 
             document.title = 'RUNNING';
             const endTime = new Date();
             endTime.setMinutes(endTime.getMinutes() + 30)
 
-            x = setInterval(() => {
+            countDown = setInterval(() => {
                 const remainingTime = endTime - new Date();
                 const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
                 let time = seconds + "s ";
 
                 if (remainingTime < 0) {
-                    clearInterval(x);
+                    clearInterval(countDown);
                     const ding = new Audio('type-writer-ding.wav');
                     document.getElementById("timer").innerHTML = 'COMPLETE';
                     const stop = document.getElementById('stop');
@@ -47,8 +47,8 @@ window.addEventListener('load', () => {
 
     document.getElementById('stop').onclick =
         (event) => {
-            if (!!x) {
-                clearInterval(x);
+            if (!!countDown) {
+                clearInterval(countDown);
             }
 
             document.getElementById("timer").innerHTML = "STOPPED";
