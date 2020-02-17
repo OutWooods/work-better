@@ -8,6 +8,8 @@
 
 - Can pause time.
 
+- Stop logs incomplete activities.
+
 #### Fixed
 
 - show current focus

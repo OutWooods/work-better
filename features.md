@@ -4,8 +4,6 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-- Stop logs incomplete activities.
-
 ## Planned
 
 - Make focus optional.
