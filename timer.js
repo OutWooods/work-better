@@ -25,10 +25,6 @@ window.addEventListener('load', () => {
                 clearInterval(countDown);
             }
 
-            if (!focusArea) {
-                return alert('Please add a focus!')
-            }
-
             document.title = 'RUNNING';
 
             if (isPaused) {

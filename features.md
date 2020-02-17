@@ -4,9 +4,11 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-## Planned
-
 - Make focus optional.
+
+- if time runs out, pause button should disappear
+
+## Planned
 
 - Make the advice/comments hideable (maybe in the corner, a 'clear view' options).
 

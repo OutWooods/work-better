@@ -51,16 +51,18 @@ export const formatTime = (time) => {
 
 const formatDate = (time) => time.getHours() + ':' + time.getMinutes();
 
-export const completeTask = (start, end, timeTaken, task = {}) => {
+export const completeTask = (start, end, timeTaken, task) => {
     const taskData = {
         start,
         end,
         timeTaken,
-        name: task.name,
+        name: task ? task.name : 'Undefined task',
         distractionCount: distractionCount,
     }
 
-    changeCount(task.id);
+    if (task) {
+        changeCount(task.id);
+    }
     // TODO dependent on a global
     completedTasks.push(taskData);
     // TODO dependent on a global
