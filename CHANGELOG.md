@@ -14,6 +14,8 @@
 
 - Store helper methods in utlities (now must run with `http-server` locally)
 
+- DEPEDENCY: Add `date-fns`
+
 ### [2019-02-14]
 
 #### Added

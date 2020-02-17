@@ -1,8 +1,23 @@
 import { completeTask, formatTime } from './utilities.js';
 
 window.addEventListener('load', () => {
-    var startLength = 30;
-    var minutes = 1;
+    var timeLeft = 600000;
+    var milliseconds = 600000;
+    var isPaused = false;
+    var endTime = new Date();
+    var startTime = new Date();
+
+    const finishCycle = (event) => {
+        clearInterval(countDown);
+        completeTask(startTime, endTime, focusArea)
+        const ding = new Audio('type-writer-ding.wav');
+        document.getElementById("timer").innerHTML = 'COMPLETE';
+        const stop = document.getElementById('stop');
+        stop.style.display = 'none';
+        event.target.style.display = '';
+        document.title = 'COMPLETE';
+        ding.play()
+    }
 
     document.getElementById('start').onclick =
         (event) => {
@@ -15,23 +30,23 @@ window.addEventListener('load', () => {
             }
 
             document.title = 'RUNNING';
-            const endTime = new Date();
-            const startTime = new Date();
-            endTime.setMinutes(endTime.getMinutes() + minutes)
+
+            if (isPaused) {
+                endTime = dateFns.addMilliseconds(new Date(), timeLeft);
+                isPaused = false;
+            }
+            else {
+                endTime = new Date();
+                startTime = new Date();
+                timeLeft = milliseconds + '';
+                endTime.setMinutes(endTime.getMinutes() + milliseconds / 60000)
+            }
 
             countDown = setInterval(() => {
                 const remainingTime = endTime - new Date();
 
                 if (remainingTime < 0) {
-                    clearInterval(countDown);
-                    completeTask(startTime, endTime, focusArea)
-                    const ding = new Audio('type-writer-ding.wav');
-                    document.getElementById("timer").innerHTML = 'COMPLETE';
-                    const stop = document.getElementById('stop');
-                    stop.style.display = 'none';
-                    event.target.style.display = '';
-                    document.title = 'COMPLETE';
-                    ding.play()
+                    finishCycle(event);
                     return;
                 }
 
@@ -39,6 +54,8 @@ window.addEventListener('load', () => {
 
                 const stop = document.getElementById('stop');
                 stop.style.display = '';
+                const pause = document.getElementById('pause');
+                pause.style.display = '';
                 event.target.style.display = 'none';
             }, 500);
         }
@@ -51,6 +68,23 @@ window.addEventListener('load', () => {
 
             document.getElementById("timer").innerHTML = "STOPPED";
             document.title = 'STOPPED';
+            const start = document.getElementById('start');
+            start.style.display = '';
+            event.target.style.display = 'none';
+            return;
+        }
+
+    document.getElementById('pause').onclick =
+        (event) => {
+            if (!!countDown) {
+                clearInterval(countDown);
+            }
+
+            isPaused = true;
+            timeLeft = dateFns.differenceInMilliseconds(endTime, new Date());
+
+            document.getElementById("timer").innerHTML = "STOPPED";
+            document.title = 'PAUSED';
             const start = document.getElementById('start');
             start.style.display = '';
             event.target.style.display = 'none';
