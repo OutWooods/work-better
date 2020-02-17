@@ -4,8 +4,6 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-- Make focus optional.
-
 - if time runs out, pause button should disappear
 
 ## Planned

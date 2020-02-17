@@ -10,6 +10,8 @@
 
 - Stop logs incomplete activities.
 
+- Make focus optional.
+
 #### Fixed
 
 - show current focus
