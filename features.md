@@ -4,10 +4,6 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-- Store log in localStorage.
-
-- Show data in localStorage on page load.
-
 ## Planned
 
 - Show date on task if it's not today.

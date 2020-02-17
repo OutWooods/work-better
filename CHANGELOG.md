@@ -14,6 +14,8 @@
 
 - Can toggle the help sections on the site.
 
+- Can see tasks and completed tasks from localStorage.
+
 #### Fixed
 
 - show current focus
