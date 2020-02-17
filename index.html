@@ -127,7 +127,7 @@
         return time.getHours() + ':' + time.getMinutes();
     }
 
-    const completeTask = (task, start, end) => {
+    const completeTask = (start, end, task = {}) => {
         const taskData = {
             start,
             end,
@@ -135,10 +135,11 @@
         }
 
         changeCount(task.id);
+        // TODO dependent on a global
         completedTasks.push(taskData);
         const completedTask = document.createElement('div');
         const taskName = document.createElement('span');
-        taskName.innerHTML = taskData.name;
+        taskName.innerHTML = `${completedTasks.length}) ${taskData.name}`;
         const startTime = document.createElement('span');
         startTime.innerHTML = ' Start: ' + formatDate(start);
         const endTime = document.createElement('span');

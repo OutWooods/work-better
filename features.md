@@ -82,6 +82,8 @@
 
 - Move to typescript (for V2)
 
+- Make a store to edit values
+
 ## Bugs
 
 - Ding isnt working (PRIORITY)
