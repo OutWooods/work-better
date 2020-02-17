@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
             document.title = 'RUNNING';
             const endTime = new Date();
             const startTime = new Date();
-            endTime.setMinutes(endTime.getMinutes() + 0)
+            endTime.setMinutes(endTime.getMinutes() + minutes)
 
             countDown = setInterval(() => {
                 const remainingTime = endTime - new Date();
@@ -51,20 +51,6 @@ window.addEventListener('load', () => {
                 stop.style.display = '';
                 event.target.style.display = 'none';
             }, 500);
-        }
-
-    document.getElementById('stop').onclick =
-        (event) => {
-            if (!!countDown) {
-                clearInterval(countDown);
-            }
-
-            document.getElementById("timer").innerHTML = "STOPPED";
-            document.title = 'STOPPED';
-            const start = document.getElementById('start');
-            start.style.display = '';
-            event.target.style.display = 'none';
-            return;
         }
 
     document.getElementById('stop').onclick =
