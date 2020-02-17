@@ -24,13 +24,14 @@
 
 [x] Shows length of time
 
-[ ] Shows distraction count
+[x] Shows distraction count
 
 [ ] Bug - not showing the name of the task on cycle count
 
 [ ] Store helper methods in utlities
 
-[ ] Add tests for the helper methods
+[ ] Bug - show current focus as it's going
+
 
 ## Planned
 
