@@ -16,6 +16,8 @@
 
 - show current focus
 
+- if time runs out, pause button should disappear
+
 #### Technical
 
 - Store helper methods in utlities (now must run with `http-server` locally)
