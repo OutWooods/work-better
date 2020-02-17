@@ -20,10 +20,6 @@ window.addEventListener('load', () => {
 
             countDown = setInterval(() => {
                 const remainingTime = endTime - new Date();
-                const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-                let time = seconds + "s ";
 
                 if (remainingTime < 0) {
                     clearInterval(countDown);
@@ -38,14 +34,7 @@ window.addEventListener('load', () => {
                     return;
                 }
 
-                if (hours > 0) {
-                    time = hours + 'h ' + minutes + 'm ' + time;
-                }
-                else if (minutes > 0) {
-                    time = minutes + "m " + time;
-                }
-
-                document.getElementById('timer').innerHTML = time;
+                document.getElementById('timer').innerHTML = formatTime(remainingTime);
 
                 const stop = document.getElementById('stop');
                 stop.style.display = '';

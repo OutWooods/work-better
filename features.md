@@ -26,6 +26,8 @@
 
 [ ] Shows distraction count
 
+[ ] Bug - not showing the name of the task on cycle count
+
 ## Planned
 
 - Design
