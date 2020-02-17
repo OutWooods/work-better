@@ -11,12 +11,19 @@ export const changeCount = (index, amount = 1) => {
     document.getElementById(`count-${index}`).innerHTML = 0;
 }
 
-const createButton = (clickEvent, extras = {}) => {
+export const createElement = (type, text) => {
+    const element = document.createElement(type);
+    element.innerHTML = text;
+    return element;
+}
+
+export const createButton = (clickEvent, extras = {}) => {
     const { feather, innerHTML } = extras;
     const button = document.createElement('button');
     button.onclick = clickEvent;
+
     if (feather) {
-        featherIcon = document.createElement('i')
+        const featherIcon = document.createElement('i')
         featherIcon.dataset.feather = feather
         button.appendChild(featherIcon);
     } else {
@@ -25,7 +32,7 @@ const createButton = (clickEvent, extras = {}) => {
     return button;
 }
 
-const formatTime = (time) => {
+export const formatTime = (time) => {
     const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((time % (1000 * 60)) / 1000);
@@ -42,9 +49,7 @@ const formatTime = (time) => {
     return formattedSeconds;
 }
 
-const formatDate = (time) => {
-    return time.getHours() + ':' + time.getMinutes();
-}
+const formatDate = (time) => time.getHours() + ':' + time.getMinutes();
 
 export const completeTask = (start, end, task = {}) => {
     const taskData = {
@@ -60,21 +65,19 @@ export const completeTask = (start, end, task = {}) => {
     // TODO dependent on a global
     distractionCount = 0;
     const completedTask = document.createElement('div');
-    const taskName = document.createElement('span');
-    taskName.innerHTML = `${completedTasks.length}) ${taskData.name}`;
-    const startTime = document.createElement('span');
-    startTime.innerHTML = ' Start: ' + formatDate(start);
-    const endTime = document.createElement('span');
-    endTime.innerHTML = ' End: ' + formatDate(end);
-    const taskLength = document.createElement('span');
-    taskLength.innerHTML = ' Length: ' + formatTime(end - start);
-    const distractions = document.createElement('span');
-    taskLength.innerHTML = ' Distractions: ' + taskData.distractionCount;
+
+    const taskName = createElement('span', `${completedTasks.length}) ${taskData.name}`);
+    const startTime = createElement('span', ' Start: ' + formatDate(start));
+    const endTime = createElement('span', ' End: ' + formatDate(end));
+    const taskLength = createElement('span', ' Length: ' + formatTime(end - start));
+    const distractions = createElement('span', ' Distractions: ' + taskData.distractionCount);
+
     completedTask.appendChild(taskName);
     completedTask.appendChild(startTime);
     completedTask.appendChild(endTime);
     completedTask.appendChild(taskLength);
     completedTask.appendChild(distractions);
+
     document.getElementById('completed-areas').style.display = '';
     document.getElementById('completed-areas').appendChild(completedTask);
 }

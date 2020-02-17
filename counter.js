@@ -1,4 +1,4 @@
-import { changeCount } from './utilities.js';
+import { changeCount, createButton, createElement } from './utilities.js';
 
 window.addEventListener('load', () => {
     const setFocus = (index) => {
@@ -16,19 +16,14 @@ window.addEventListener('load', () => {
             areasOfFocus.push({ name: newFocus, count: 0, id: index })
 
             const focus = document.createElement('div');
-
-            const text = document.createElement('span');
-            text.innerHTML = newFocus;
+            const text = createElement('span', newFocus)
 
             const plusButton = createButton(() => { changeCount(index) }, { feather: 'plus' })
             const minusButton = createButton(() => { changeCount(index, -1) }, { feather: 'minus' })
             const setAsFocus = createButton(() => { setFocus(index) }, { innerHTML: 'Set as focus' })
 
-            const countName = document.createElement('span');
-            countName.innerHTML = ' count: ';
-
-            const count = document.createElement('span');
-            count.innerHTML = '0';
+            const countName = createElement('span', ' count: ');
+            const count = createElement('span', '0');
             count.id = `count-${index}`
 
             focus.appendChild(text);

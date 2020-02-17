@@ -4,8 +4,6 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-[ ] Store helper methods in utlities
-
 ## Planned
 
 - Design

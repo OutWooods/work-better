@@ -1,4 +1,4 @@
-import { completeTask } from './utilities.js';
+import { completeTask, formatTime } from './utilities.js';
 
 window.addEventListener('load', () => {
     var startLength = 30;

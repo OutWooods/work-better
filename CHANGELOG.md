@@ -4,9 +4,14 @@
 
 - Have a log for the day of completed cycles (Task, Time, start and end, check count). Maybe optional logger of things.
 
+
 #### Fixed
 
 - show current focus
+
+#### Technical
+
+- Store helper methods in utlities (now must run with `http-server` locally)
 
 ### [2019-02-14]
 
