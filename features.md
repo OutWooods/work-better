@@ -44,8 +44,6 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## Bugs
 
-- Ding isnt working.
-
 - Show the first time before the intervals.
 
 - Minimal links should be hidden on first load.
