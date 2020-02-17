@@ -1,13 +1,18 @@
+import { getAreasOfFocus, setAreasOfFocus } from './store.js';
+
 export const changeCount = (index, amount = 1) => {
+    const areasOfFocus = getAreasOfFocus();
     const newCount = areasOfFocus[index].count + amount;
 
     if (newCount >= 0) {
         areasOfFocus[index].count = newCount
+        setAreasOfFocus(areasOfFocus);
         document.getElementById(`count-${index}`).innerHTML = areasOfFocus[index].count;
         return;
     }
 
     areasOfFocus[index].count = 0;
+    setAreasOfFocus(areasOfFocus);
     document.getElementById(`count-${index}`).innerHTML = 0;
 }
 

@@ -4,11 +4,11 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-## Planned
-
 - Store log in localStorage.
 
 - Show data in localStorage on page load.
+
+## Planned
 
 - Show date on task if it's not today.
 
@@ -47,6 +47,8 @@ See [CHANGELOG](CHANGELOG.md)
 - Ding isnt working.
 
 - Show the first time before the intervals.
+
+- Minimal links should be hidden on first load.
 
 ## V2
 - Maybe porting it out to Vue (for say V2).
