@@ -4,15 +4,21 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-## Planned
-
-- Show date on task if it's not today.
-
 - Clear local storage - completed tasks
 
 - Clear local storage - areas of Focus (and completed tasks)
 
+## Planned
+
+- Show date on task if it's not today.
+
 - Add tests for the helper methods.
+
+- Show total time worked today.
+
+- Have a separate section for
+
+- BEFORE DESIGN complete all Bugs and Decide on mulling over section.
 
 - Design (and add in TailWind style CSS).
 
@@ -23,6 +29,7 @@ See [CHANGELOG](CHANGELOG.md)
 - Default time is actually correct.
 
 - Extend - if you're going well and dont want to stop;
+
 
 ## Mulling over
 

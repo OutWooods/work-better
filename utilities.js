@@ -119,7 +119,7 @@ export const addCompletedTask = (task, position) => {
     completedTask.appendChild(taskLength);
     completedTask.appendChild(distractions);
 
-    document.getElementById('completed-areas').style.display = '';
+    document.getElementById('completed-areas-section').style.display = '';
     document.getElementById('completed-areas').appendChild(completedTask);
 }
 
