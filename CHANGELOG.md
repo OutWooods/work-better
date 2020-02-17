@@ -2,8 +2,9 @@
 
 #### Added
 
-- Have a log for the day of completed cycles (Task, Time, start and end, check count). Maybe optional logger of things.
+- Have a log for the day of completed cycles (Task, Time, start and end).
 
+- Track every time during the timer you come and check the page.
 
 #### Fixed
 

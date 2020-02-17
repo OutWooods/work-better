@@ -4,62 +4,63 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
+[ ] Can pause time.
+
 ## Planned
 
-- Design
+- Stop logs incomplete activities.
 
-- Can adjust time
+- Make focus optional.
 
-- Can pause time
+- Can adjust time.
 
-- Make the advice/comments hideable (maybe in the corner, a 'clear view' options)
-
-- The head tab says which task and count
-
-- Can hide all the comments/advice.
+- Make the advice/comments hideable (maybe in the corner, a 'clear view' options).
 
 - Add a nice footer
 
-- Make focus optional
-
 - Store log in localStorage.
+
+- Show data in localStorage on page load.
 
 - Show date on task if it's not today.
 
-- clear local storage.
-
-- Track every time during the timer you come and check the page.
+- Clear local storage.
 
 - Can clear data.
 
-- Add tests for the helper methods
+- Add tests for the helper methods.
 
-- Stop logs incomplete activities
+- Design (and add in TailWind style CSS).
 
 ## Mulling over
 
-- Can type in goal at top
+- Can type in goal at top.
 
-- Second, slightly louder sound if not noticed a minute later
+- Second, slightly louder sound if not noticed a minute later.
 
-- Better name for focus areas (dont want to use the word task - might go with jobs)
+- Better name for focus areas (dont want to use the word task - might go with jobs).
 
 - Have a blank style and a nice style. Toggle CSS sheets.
 
 - Can easily copy over the data for the day.
 
+- What to do when the user comes and pauses?
+
+- Can users edit the distraction count themselves?
+
 ## Technical work
-
-- Maybe porting it out to Vue (for say V2)
-
-- Add some backend to store values
-
-- Some sort of change log for features
-
-- Move to typescript (for V2)
 
 - Make a store to edit values
 
 ## Bugs
 
-- Ding isnt working
+- Ding isnt working.
+
+- Show the first time before the intervals.
+
+## V2
+- Maybe porting it out to Vue (for say V2).
+
+- Move to typescript (for V2).
+
+- Add some backend to store values.
