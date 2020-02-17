@@ -29,3 +29,13 @@ What's the point? Takes minimal time to set up, easy to improve. Also starting o
 HTML, CSS, JS
 
 CSS is in utility style following [tailwind](https://tailwindcss.com/) conventions.
+
+#### Running locally
+
+1. Install [http-server](https://www.npmjs.com/package/http-server)
+
+2. Inside the main directory run `http-server`
+
+3. Go to the URL it suggests
+
+4. Done!
