@@ -6,6 +6,8 @@
 
 - Track every time during the timer you come and check the page.
 
+- Can pause time.
+
 #### Fixed
 
 - show current focus

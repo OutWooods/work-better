@@ -4,11 +4,9 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-[ ] Can pause time.
+[ ] Stop logs incomplete activities.
 
 ## Planned
-
-- Stop logs incomplete activities.
 
 - Make focus optional.
 
