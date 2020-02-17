@@ -12,6 +12,8 @@
 
 - Make focus optional.
 
+- Can toggle the help sections on the site.
+
 #### Fixed
 
 - show current focus

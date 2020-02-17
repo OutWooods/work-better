@@ -4,8 +4,6 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-- Make the advice/comments hideable (maybe in the corner, a 'clear view' options).
-
 ## Planned
 
 - Store log in localStorage.
