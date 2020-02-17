@@ -10,8 +10,6 @@ See [CHANGELOG](CHANGELOG.md)
 
 - Make the advice/comments hideable (maybe in the corner, a 'clear view' options).
 
-- Add a nice footer
-
 - Store log in localStorage.
 
 - Show data in localStorage on page load.
@@ -20,11 +18,11 @@ See [CHANGELOG](CHANGELOG.md)
 
 - Clear local storage.
 
-- Can clear data.
-
 - Add tests for the helper methods.
 
 - Design (and add in TailWind style CSS).
+
+- Add a nice footer
 
 - Can adjust time.
 

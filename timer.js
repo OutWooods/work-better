@@ -14,6 +14,8 @@ window.addEventListener('load', () => {
         document.getElementById("timer").innerHTML = 'COMPLETE';
         const stop = document.getElementById('stop');
         stop.style.display = 'none';
+        const pause = document.getElementById('pause');
+        pause.style.display = 'none';
         event.target.style.display = '';
         document.title = 'COMPLETE';
         ding.play()
