@@ -2,7 +2,7 @@ import { completeTask, formatTime } from './utilities.js';
 
 window.addEventListener('load', () => {
     var timeLeft = 60000;
-    var milliseconds = 0;
+    var milliseconds = 60000;
     var isPaused = false;
     var endTime = new Date();
     var startTime = new Date();

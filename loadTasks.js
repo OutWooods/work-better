@@ -1,5 +1,5 @@
 import { getAreasOfFocus, getCompletedTasks, setCompletedTasks, setAreasOfFocus } from './store.js';
-import { addAreaOfFocus, addCompletedTask } from './utilities.js';
+import { addAreaOfFocus, storeTotalTimeWorked, addCompletedTask } from './utilities.js';
 
 window.addEventListener('load', () => {
     const areasOfFocus = getAreasOfFocus();
@@ -8,6 +8,7 @@ window.addEventListener('load', () => {
         const completedTasks = getCompletedTasks();
 
         if (completedTasks !== []) {
+            storeTotalTimeWorked(completedTasks);
             completedTasks.forEach((task, index) => {
                 addCompletedTask(task, index + 1);
             })
@@ -24,8 +25,8 @@ window.addEventListener('load', () => {
     }
 
     const clearCompletedTasks = () => {
+        storeTotalTimeWorked([]);
         setCompletedTasks([]);
-        document.getElementById('completed-areas-section').style.display = 'none';
         document.getElementById('completed-areas').innerHTML = '';
     }
 

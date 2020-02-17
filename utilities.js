@@ -56,6 +56,21 @@ export const formatTime = (time) => {
 
 const formatDate = (time) => time.getHours() + ':' + time.getMinutes();
 
+export const storeTotalTimeWorked = (completedTasks) => {
+    if (completedTasks === []) {
+        document.getElementById('time-worked').innerHTML = '';
+        return;
+    }
+
+    let taskTime = 0;
+    completedTasks.forEach((task) => {
+        taskTime += task.timeTaken;
+    });
+
+    document.getElementById('time-worked').innerHTML = 'Total: ' + formatTime(taskTime);
+
+}
+
 export const completeTask = (start, end, timeTaken, task) => {
     const taskData = {
         start,
@@ -72,11 +87,9 @@ export const completeTask = (start, end, timeTaken, task) => {
     const completedTasks = getCompletedTasks();
     completedTasks.push(taskData);
     setCompletedTasks(completedTasks);
-
+    storeTotalTimeWorked(completedTasks);
     // TODO dependent on a global
     distractionCount = 0;
-    const completedTask = document.createElement('div');
-
     addCompletedTask(taskData, completedTasks.length)
 }
 
@@ -108,7 +121,7 @@ export const addCompletedTask = (task, position) => {
 
     const taskName = createElement('span', `${position}) ${task.name}`);
     const startTime = createElement('span', ' Start: ' + formatDate(new Date(task.start)));
-    const formattedEnd = task.end === 'N/A' ? end : formatDate(new Date(task.end));
+    const formattedEnd = task.end === 'N/A' ? task.end : formatDate(new Date(task.end));
     const endTime = createElement('span', ' End: ' + formattedEnd);
     const taskLength = createElement('span', ' Length: ' + formatTime(task.timeTaken));
     const distractions = createElement('span', ' Distractions: ' + task.distractionCount);
@@ -119,7 +132,6 @@ export const addCompletedTask = (task, position) => {
     completedTask.appendChild(taskLength);
     completedTask.appendChild(distractions);
 
-    document.getElementById('completed-areas-section').style.display = '';
     document.getElementById('completed-areas').appendChild(completedTask);
 }
 

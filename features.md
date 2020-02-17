@@ -4,15 +4,15 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
+- Maybe have the completed tasks section always visible. But empty
+
+- Show total time worked today.
+
 ## Planned
 
 - Show date on task if it's not today.
 
-- Add tests for the helper methods.
-
-- Show total time worked today.
-
-- Have a separate section for
+- Have a separate section for incomplete tasks.
 
 - BEFORE DESIGN complete all Bugs and Decide on mulling over section.
 
@@ -26,9 +26,11 @@ See [CHANGELOG](CHANGELOG.md)
 
 - Extend - if you're going well and dont want to stop;
 
-## Mulling over
+- Add tests for the helper methods.
 
-- Maybe have the completed tasks section always visible. But empty
+- Tidy up and make V1 code really nice.
+
+## Mulling over
 
 - Second, slightly louder sound if not noticed a minute later.
 
