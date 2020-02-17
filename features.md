@@ -12,7 +12,9 @@ See [CHANGELOG](CHANGELOG.md)
 
 - Show date on task if it's not today.
 
-- Clear local storage.
+- Clear local storage - completed tasks
+
+- Clear local storage - areas of Focus (and completed tasks)
 
 - Add tests for the helper methods.
 
@@ -21,6 +23,8 @@ See [CHANGELOG](CHANGELOG.md)
 - Add a nice footer
 
 - Can adjust time.
+
+- Default time is actually correct.
 
 - Extend - if you're going well and dont want to stop;
 
@@ -43,6 +47,8 @@ See [CHANGELOG](CHANGELOG.md)
 - Make a store to edit values
 
 ## Bugs
+
+- No Duplicate focus names
 
 - Show the first time before the intervals.
 

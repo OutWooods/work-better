@@ -1,4 +1,4 @@
-import { getAreasOfFocus, setAreasOfFocus } from './store.js';
+import { getAreasOfFocus, setAreasOfFocus, getCompletedTasks, setCompletedTasks, setFocus } from './store.js';
 
 export const changeCount = (index, amount = 1) => {
     const areasOfFocus = getAreasOfFocus();
@@ -68,8 +68,11 @@ export const completeTask = (start, end, timeTaken, task) => {
     if (task) {
         changeCount(task.id);
     }
-    // TODO dependent on a global
+
+    const completedTasks = getCompletedTasks();
     completedTasks.push(taskData);
+    setCompletedTasks(completedTasks);
+
     // TODO dependent on a global
     distractionCount = 0;
     const completedTask = document.createElement('div');
@@ -89,6 +92,29 @@ export const completeTask = (start, end, timeTaken, task) => {
 
     document.getElementById('completed-areas').style.display = '';
     document.getElementById('completed-areas').appendChild(completedTask);
+}
+
+export const addAreaOfFocus = (area) => {
+    const focus = document.createElement('div');
+    const text = createElement('span', area.name)
+
+    const plusButton = createButton(() => { changeCount(area.id) }, { feather: 'plus' })
+    const minusButton = createButton(() => { changeCount(area.id, -1) }, { feather: 'minus' })
+    const setAsFocus = createButton(() => { setFocus(area.id) }, { innerHTML: 'Set as focus' })
+
+    const countName = createElement('span', ' count: ');
+    const count = createElement('span', '0');
+    count.id = `count-${area.id}`
+
+    focus.appendChild(text);
+    focus.appendChild(countName);
+    focus.appendChild(count);
+    focus.appendChild(plusButton);
+    focus.appendChild(minusButton);
+    focus.appendChild(setAsFocus);
+    document.getElementById('focus-areas').appendChild(focus);
+
+    document.getElementById('new-focus').value = '';
 }
 
 document.addEventListener("visibilitychange", () => {
