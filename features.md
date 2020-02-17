@@ -54,6 +54,8 @@ See [CHANGELOG](CHANGELOG.md)
 
 - Minimal links should be hidden on first load.
 
+- Check distraction count is working
+
 ## V2
 - Maybe porting it out to Vue (for say V2).
 

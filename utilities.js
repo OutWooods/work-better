@@ -62,7 +62,7 @@ export const completeTask = (start, end, timeTaken, task) => {
         end,
         timeTaken,
         name: task ? task.name : 'Undefined task',
-        distractionCount: distractionCount,
+        distractionCount,
     }
 
     if (task) {
@@ -77,21 +77,7 @@ export const completeTask = (start, end, timeTaken, task) => {
     distractionCount = 0;
     const completedTask = document.createElement('div');
 
-    const taskName = createElement('span', `${completedTasks.length}) ${taskData.name}`);
-    const startTime = createElement('span', ' Start: ' + formatDate(start));
-    const formattedEnd = end === 'N/A' ? end : formatDate(end);
-    const endTime = createElement('span', ' End: ' + formattedEnd);
-    const taskLength = createElement('span', ' Length: ' + formatTime(timeTaken));
-    const distractions = createElement('span', ' Distractions: ' + taskData.distractionCount);
-
-    completedTask.appendChild(taskName);
-    completedTask.appendChild(startTime);
-    completedTask.appendChild(endTime);
-    completedTask.appendChild(taskLength);
-    completedTask.appendChild(distractions);
-
-    document.getElementById('completed-areas').style.display = '';
-    document.getElementById('completed-areas').appendChild(completedTask);
+    addCompletedTask(taskData, completedTasks.length)
 }
 
 export const addAreaOfFocus = (area) => {
@@ -115,6 +101,26 @@ export const addAreaOfFocus = (area) => {
     document.getElementById('focus-areas').appendChild(focus);
 
     document.getElementById('new-focus').value = '';
+}
+
+export const addCompletedTask = (task, position) => {
+    const completedTask = document.createElement('div');
+
+    const taskName = createElement('span', `${position}) ${task.name}`);
+    const startTime = createElement('span', ' Start: ' + formatDate(new Date(task.start)));
+    const formattedEnd = task.end === 'N/A' ? end : formatDate(new Date(task.end));
+    const endTime = createElement('span', ' End: ' + formattedEnd);
+    const taskLength = createElement('span', ' Length: ' + formatTime(task.timeTaken));
+    const distractions = createElement('span', ' Distractions: ' + task.distractionCount);
+
+    completedTask.appendChild(taskName);
+    completedTask.appendChild(startTime);
+    completedTask.appendChild(endTime);
+    completedTask.appendChild(taskLength);
+    completedTask.appendChild(distractions);
+
+    document.getElementById('completed-areas').style.display = '';
+    document.getElementById('completed-areas').appendChild(completedTask);
 }
 
 document.addEventListener("visibilitychange", () => {
