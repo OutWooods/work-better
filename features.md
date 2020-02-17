@@ -18,12 +18,9 @@
 
 ## In progress
 
-[ ] Bug - not showing the name of the task on cycle count
+[x] Bug - show current focus as it's going
 
 [ ] Store helper methods in utlities
-
-[ ] Bug - show current focus as it's going
-
 
 ## Planned
 
@@ -54,6 +51,8 @@
 - Can clear data.
 
 - Add tests for the helper methods
+
+- Stop logs incomplete activities
 
 ## Mulling over
 

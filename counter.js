@@ -10,17 +10,25 @@ window.addEventListener('load', () => {
 
         if (newFocus !== '' && !areasOfFocus.includes(newFocus)) {
             const index = areasOfFocus.length;
+
             areasOfFocus.push({ name: newFocus, count: 0, id: index })
+
             const focus = document.createElement('div');
+
             const text = document.createElement('span');
-            const countName = document.createElement('span');
-            const count = document.createElement('span');
+            text.innerHTML = newFocus;
+
             const plusButton = createButton(() => { changeCount(index) }, { feather: 'plus' })
             const minusButton = createButton(() => { changeCount(index, -1) }, { feather: 'minus' })
             const setAsFocus = createButton(() => { setFocus(index) }, { innerHTML: 'Set as focus' })
+
+            const countName = document.createElement('span');
             countName.innerHTML = ' count: ';
+
+            const count = document.createElement('span');
             count.innerHTML = '0';
             count.id = `count-${index}`
+
             focus.appendChild(text);
             focus.appendChild(countName);
             focus.appendChild(count);
@@ -28,6 +36,7 @@ window.addEventListener('load', () => {
             focus.appendChild(minusButton);
             focus.appendChild(setAsFocus);
             document.getElementById('focus-areas').appendChild(focus);
+
             document.getElementById('new-focus').value = '';
             feather.replace();
         }
