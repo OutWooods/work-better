@@ -16,6 +16,10 @@
 
 - Can see tasks and completed tasks from localStorage.
 
+- Clear local storage - completed tasks
+
+- Clear local storage - areas of Focus (and completed tasks)
+
 #### Fixed
 
 - show current focus
