@@ -9,24 +9,31 @@
 
 <body>
     <h1>Use time well</h1>
-    <h2>A few tips on this site. Take or leave as you wish</h2>
-    <p>
-        Trust the timer. Ideally avoid looking back on it. If you need to. Pay attention as you click. You'll see a
-        RUNNING message on the tab. The reason for this is that the more time you think and check the time, the more
-        you're breaking from the task.
-    </p>
-    <p>
-        Avoid music (except the lofi below) unless it's the only way to get you to work.
-        Music is distracting, making decisions about it is distracting. But sometimes you do need something to ramp you
-        up. There are three tracks, but working in silence is surprisingly pleasant if you can.
-    </p>
-    <p>
-        With tracking. Be honest, and be slightly pedantic. Aka, the distraction counter might miss something or you
-        might waste the last minute before the timer. If there's something you don't quite know if you should count it
-        as a distraction.Count it. If you think you missed out a counter, add it. It's better to be slightly pedantic on
-        the rules rather than allowing grey areas, because it stops you cheating them in the long run. There's no
-        reward/punishment for these, so there's no real value to cheating.
-    </p>
+    <button id='hide-help'>Hide Help</button>
+    <button id='show-help' style='display: none'>Show Help</button>
+    <div class='help'>
+        <h2>A few tips on this site. Take or leave as you wish</h2>
+        <p>
+            Trust the timer. Ideally avoid looking back on it. If you need to. Pay attention as you click. You'll see a
+            RUNNING message on the tab. The reason for this is that the more time you think and check the time, the more
+            you're breaking from the task.
+        </p>
+        <p>
+            Avoid music (except the lofi below) unless it's the only way to get you to work.
+            Music is distracting, making decisions about it is distracting. But sometimes you do need something to ramp
+            you
+            up. There are three tracks, but working in silence is surprisingly pleasant if you can.
+        </p>
+        <p>
+            With tracking. Be honest, and be slightly pedantic. Aka, the distraction counter might miss something or you
+            might waste the last minute before the timer. If there's something you don't quite know if you should count
+            it
+            as a distraction.Count it. If you think you missed out a counter, add it. It's better to be slightly
+            pedantic on
+            the rules rather than allowing grey areas, because it stops you cheating them in the long run. There's no
+            reward/punishment for these, so there's no real value to cheating.
+        </p>
+    </div>
     <h2>Timer</h2>
     <div>
         <span id='timer'>30m 0s</span>
@@ -51,7 +58,7 @@
         </form>
     </div>
     <br />
-    <div>
+    <div class='help'>
         <h2>Reviews of the three noises I've chosen</h2>
         <p>
             <a href="https://coffitivity.com" target="_blank" rel="noopener noreferrer">Coffivity</a>
@@ -75,13 +82,16 @@
             nice and relaxing to work to. 2 hours of music.
             Makes you feel like you're in one of the panoramic shots by Johnny Harris for Vox.
         </p>
+    </div>
+
+    <div class='not-help'>
         <a href="https://coffitivity.com" target="_blank" rel="noopener noreferrer">Coffivity</a>
         <a href="https://www.noisli.com" target="_blank" rel="noopener noreferrer">Nosili</a>
         <a href="https://www.youtube.com/watch?v=-FlxM_0S2lA" target="_blank" rel="noopener noreferrer">Lofi hip hop
             mix</a>
         <br />
-        <a href="https://github.com/Tagrand/work-better" target="_blank" rel="noopener noreferrer">Source code</a>
     </div>
+    <a href="https://github.com/Tagrand/work-better" target="_blank" rel="noopener noreferrer">Source code</a>
 </body>
 <script>feather.replace()</script>
 <script>
@@ -93,5 +103,6 @@
 </script>
 <script type="module" src="counter.js"></script>
 <script type="module" src="timer.js"></script>
+<script type="module" src="showHelp.js"></script>
 
 </html>

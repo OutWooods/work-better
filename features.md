@@ -4,9 +4,9 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-## Planned
-
 - Make the advice/comments hideable (maybe in the corner, a 'clear view' options).
+
+## Planned
 
 - Store log in localStorage.
 
@@ -23,6 +23,8 @@ See [CHANGELOG](CHANGELOG.md)
 - Add a nice footer
 
 - Can adjust time.
+
+- Extend - if you're going well and dont want to stop;
 
 ## Mulling over
 
