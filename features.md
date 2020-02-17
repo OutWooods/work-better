@@ -13,41 +13,13 @@ See [CHANGELOG](CHANGELOG.md)
 
 - Show total time for each task type. (Including undefined).
 
-- BEFORE DESIGN complete all Bugs and Decide on mulling over section.
-
-- Design (and add in TailWind style CSS).
-
-- Add a nice footer
-
-- Can adjust time.
+- Extend - if you're going well and dont want to stop;
 
 - Default time is actually correct.
 
-- Extend - if you're going well and dont want to stop;
-
-- Add tests for the helper methods.
-
-- Tidy up and make V1 code really nice.
-
-## Mulling over
+- People can edit the distraction count themselves.
 
 - Second, slightly louder sound if not noticed a minute later.
-
-- Better name for focus areas (dont want to use the word task - might go with jobs).
-
-- Have a blank style and a nice style. Toggle CSS sheets.
-
-- Can easily copy over the data for the day.
-
-- What to do when the user comes and pauses?
-
-- Can users edit the distraction count themselves?
-
-## Technical work
-
-- Make a store to edit values
-
-## Bugs
 
 - No Duplicate focus names
 
@@ -57,9 +29,40 @@ See [CHANGELOG](CHANGELOG.md)
 
 - Check distraction count is working
 
+
+### Design
+
+- Add in TailWind style CSS
+
+- (Nameing) Better name for focus areas (dont want to use the word task - might go with jobs).
+
+- Add a nice footer
+
+### Tidy up and make V1 code really nice.
+
+- Add tests for the helper methods.
+
+- Refactor code - use store method.
+
+### Waiting for design
+
+- Can adjust time.
+
+- Have a blank style and a nice style. Toggle CSS sheets.
+
+## Mulling over
+
+## Technical work
+
+## Bugs
+
 ## V2
+
 - Maybe porting it out to Vue (for say V2).
 
 - Move to typescript (for V2).
 
 - Add some backend to store values.
+
+- Can easily copy over the data for the day.
+
