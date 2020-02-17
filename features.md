@@ -14,17 +14,9 @@
 
 - Have a 'current focus'. Which auto increments if you finish the timer
 
-## In progress
-
 - Have a log for the day of completed cycles (Task, Time, start and end, check count). Maybe optional logger of things.
 
-[x] Logs name of a task
-
-[x] Shows start and end date
-
-[x] Shows length of time
-
-[x] Shows distraction count
+## In progress
 
 [ ] Bug - not showing the name of the task on cycle count
 
