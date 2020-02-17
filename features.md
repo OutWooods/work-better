@@ -14,6 +14,18 @@
 
 - Have a 'current focus'. Which auto increments if you finish the timer
 
+## In progress
+
+- Have a log for the day of completed cycles (Task, Time, start and end, check count). Maybe optional logger of things.
+
+[x] Logs name of a task
+
+[ ] Shows start and end date
+
+[ ] Shows length of time
+
+[ ] Shows distraction count
+
 ## Planned
 
 - Design
@@ -26,6 +38,12 @@
 
 - The head tab says which task and count
 
+- Can hide all the comments/advice.
+
+- Add a nice footer
+
+- Make focus optional
+
 ## Mulling over
 
 - Can type in goal at top
@@ -34,15 +52,15 @@
 
 - Better name for focus areas (dont want to use the word task - might go with jobs)
 
-- Have a log for the day of completed cycles (Task, Time, start and end, check count). Maybe optional logger of things.
-
 - Store log in localStorage.
 
 - Track every time during the timer you come and check the page.
 
-- Can hide all the comments/advice.
-
 - Have a blank style and a nice style. Toggle CSS sheets.
+
+- Can easily copy over the data for the day.
+
+- Can clear data.
 
 ## Technical work
 
@@ -54,4 +72,4 @@
 
 ## Bugs
 
-- Ding isnt working
+- Ding isnt working (PRIORITY)
