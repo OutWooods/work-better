@@ -60,6 +60,8 @@
 
 - Can clear data.
 
+- Add tests for the helper methods
+
 ## Mulling over
 
 - Can type in goal at top

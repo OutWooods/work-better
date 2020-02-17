@@ -79,6 +79,8 @@
     var focusArea = undefined;
     var areasOfFocus = [];
     var completedTasks = [];
+    var distractionCount = 0;
+    var countDown = undefined;
 
     const changeCount = (index, amount = 1) => {
         const newCount = areasOfFocus[index].count + amount;
@@ -132,11 +134,14 @@
             start,
             end,
             name: task.name,
+            distractionCount: distractionCount,
         }
 
         changeCount(task.id);
         // TODO dependent on a global
         completedTasks.push(taskData);
+        // TODO dependent on a global
+        distractionCount = 0;
         const completedTask = document.createElement('div');
         const taskName = document.createElement('span');
         taskName.innerHTML = `${completedTasks.length}) ${taskData.name}`;
@@ -146,13 +151,22 @@
         endTime.innerHTML = ' End: ' + formatDate(end);
         const taskLength = document.createElement('span');
         taskLength.innerHTML = ' Length: ' + formatTime(end - start);
+        const distractions = document.createElement('span');
+        taskLength.innerHTML = ' Distractions: ' + taskData.distractionCount;
         completedTask.appendChild(taskName);
         completedTask.appendChild(startTime);
         completedTask.appendChild(endTime);
         completedTask.appendChild(taskLength);
+        completedTask.appendChild(distractions);
         document.getElementById('completed-areas').style.display = '';
         document.getElementById('completed-areas').appendChild(completedTask);
     }
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState == 'visible' && !!countDown) {
+            distractionCount += 1;
+        }
+    });
 </script>
 <script src="counter.js"></script>
 <script src="timer.js"></script>
