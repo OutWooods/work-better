@@ -16,9 +16,15 @@
 
 - Can see tasks and completed tasks from localStorage.
 
-- Clear local storage - completed tasks
+- Clear local storage - completed tasks.
 
-- Clear local storage - areas of Focus (and completed tasks)
+- Clear local storage - areas of Focus (and completed tasks).
+
+- Show total time worked today.
+
+#### Changed
+
+- The completed tasks section always visible.
 
 #### Fixed
 

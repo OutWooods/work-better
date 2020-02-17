@@ -4,15 +4,14 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-- Maybe have the completed tasks section always visible. But empty
-
-- Show total time worked today.
 
 ## Planned
 
 - Show date on task if it's not today.
 
 - Have a separate section for incomplete tasks.
+
+- Show total time for each task type. (Including undefined).
 
 - BEFORE DESIGN complete all Bugs and Decide on mulling over section.
 
