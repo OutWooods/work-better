@@ -1,15 +1,15 @@
 import { completeTask, formatTime } from './utilities.js';
 
 window.addEventListener('load', () => {
-    var timeLeft = 600000;
-    var milliseconds = 600000;
+    var timeLeft = 60000;
+    var milliseconds = 60000;
     var isPaused = false;
     var endTime = new Date();
     var startTime = new Date();
 
     const finishCycle = (event) => {
         clearInterval(countDown);
-        completeTask(startTime, endTime, focusArea)
+        completeTask(startTime, endTime, milliseconds, focusArea)
         const ding = new Audio('type-writer-ding.wav');
         document.getElementById("timer").innerHTML = 'COMPLETE';
         const stop = document.getElementById('stop');
@@ -71,6 +71,8 @@ window.addEventListener('load', () => {
             const start = document.getElementById('start');
             start.style.display = '';
             event.target.style.display = 'none';
+            timeLeft = dateFns.differenceInMilliseconds(endTime, new Date());
+            completeTask(startTime, 'N/A', milliseconds - timeLeft, focusArea)
             return;
         }
 

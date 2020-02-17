@@ -51,10 +51,11 @@ export const formatTime = (time) => {
 
 const formatDate = (time) => time.getHours() + ':' + time.getMinutes();
 
-export const completeTask = (start, end, task = {}) => {
+export const completeTask = (start, end, timeTaken, task = {}) => {
     const taskData = {
         start,
         end,
+        timeTaken,
         name: task.name,
         distractionCount: distractionCount,
     }
@@ -68,8 +69,9 @@ export const completeTask = (start, end, task = {}) => {
 
     const taskName = createElement('span', `${completedTasks.length}) ${taskData.name}`);
     const startTime = createElement('span', ' Start: ' + formatDate(start));
-    const endTime = createElement('span', ' End: ' + formatDate(end));
-    const taskLength = createElement('span', ' Length: ' + formatTime(end - start));
+    const formattedEnd = end === 'N/A' ? end : formatDate(end);
+    const endTime = createElement('span', ' End: ' + formattedEnd);
+    const taskLength = createElement('span', ' Length: ' + formatTime(timeTaken));
     const distractions = createElement('span', ' Distractions: ' + taskData.distractionCount);
 
     completedTask.appendChild(taskName);

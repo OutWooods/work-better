@@ -4,13 +4,11 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-[ ] Stop logs incomplete activities.
+- Stop logs incomplete activities.
 
 ## Planned
 
 - Make focus optional.
-
-- Can adjust time.
 
 - Make the advice/comments hideable (maybe in the corner, a 'clear view' options).
 
@@ -30,9 +28,9 @@ See [CHANGELOG](CHANGELOG.md)
 
 - Design (and add in TailWind style CSS).
 
-## Mulling over
+- Can adjust time.
 
-- Can type in goal at top.
+## Mulling over
 
 - Second, slightly louder sound if not noticed a minute later.
 
