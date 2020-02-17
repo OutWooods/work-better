@@ -1,3 +1,5 @@
+import { completeTask } from './utilities.js';
+
 window.addEventListener('load', () => {
     var startLength = 30;
     var minutes = 1;

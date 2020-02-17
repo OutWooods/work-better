@@ -1,3 +1,5 @@
+import { changeCount } from './utilities.js';
+
 window.addEventListener('load', () => {
     const setFocus = (index) => {
         focusArea = areasOfFocus[index];

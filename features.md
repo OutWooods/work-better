@@ -1,6 +1,6 @@
 ## Completed
 
-See [changeLog](CHANGELOG.md)
+See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
@@ -64,4 +64,4 @@ See [changeLog](CHANGELOG.md)
 
 ## Bugs
 
-- Ding isnt working (PRIORITY)
+- Ding isnt working
