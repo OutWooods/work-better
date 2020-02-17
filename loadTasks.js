@@ -40,6 +40,8 @@ window.addEventListener('load', () => {
         clearCompletedTasks();
     }
 
+    document.getElementById('clear-completed-areas').onclick = clearCompletedTasks;
+
     addCompletedTasks();
     addAreasOfFocus();
 });

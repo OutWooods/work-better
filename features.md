@@ -4,10 +4,6 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-- Clear local storage - completed tasks
-
-- Clear local storage - areas of Focus (and completed tasks)
-
 ## Planned
 
 - Show date on task if it's not today.
@@ -30,8 +26,9 @@ See [CHANGELOG](CHANGELOG.md)
 
 - Extend - if you're going well and dont want to stop;
 
-
 ## Mulling over
+
+- Maybe have the completed tasks section always visible. But empty
 
 - Second, slightly louder sound if not noticed a minute later.
 
