@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
     var countDown = undefined
     var startLength = 30;
-    var minutes = 30;
+    var minutes = 2;
 
     document.getElementById('start').onclick =
         (event) => {

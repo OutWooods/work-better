@@ -20,13 +20,17 @@
 
 [x] Logs name of a task
 
-[ ] Shows start and end date
+[x] Shows start and end date
 
-[ ] Shows length of time
+[x] Shows length of time
 
 [ ] Shows distraction count
 
 [ ] Bug - not showing the name of the task on cycle count
+
+[ ] Store helper methods in utlities
+
+[ ] Add tests for the helper methods
 
 ## Planned
 
@@ -46,6 +50,16 @@
 
 - Make focus optional
 
+- Store log in localStorage.
+
+- Show date on task if it's not today.
+
+- clear local storage.
+
+- Track every time during the timer you come and check the page.
+
+- Can clear data.
+
 ## Mulling over
 
 - Can type in goal at top
@@ -54,15 +68,9 @@
 
 - Better name for focus areas (dont want to use the word task - might go with jobs)
 
-- Store log in localStorage.
-
-- Track every time during the timer you come and check the page.
-
 - Have a blank style and a nice style. Toggle CSS sheets.
 
 - Can easily copy over the data for the day.
-
-- Can clear data.
 
 ## Technical work
 
@@ -71,6 +79,8 @@
 - Add some backend to store values
 
 - Some sort of change log for features
+
+- Move to typescript (for V2)
 
 ## Bugs
 

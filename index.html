@@ -144,7 +144,7 @@
         const endTime = document.createElement('span');
         endTime.innerHTML = ' End: ' + formatDate(end);
         const taskLength = document.createElement('span');
-        taskLength.innerHTML = ' Length: ' + formatTime(start - end);
+        taskLength.innerHTML = ' Length: ' + formatTime(end - start);
         completedTask.appendChild(taskName);
         completedTask.appendChild(startTime);
         completedTask.appendChild(endTime);
