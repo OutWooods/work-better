@@ -4,20 +4,18 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
+- Extend - if you're going well and dont want to stop;
+
 
 ## Planned
 
-- Have a separate section for incomplete tasks.
-
 - Show total time for each task type. (Including undefined).
 
-- Extend - if you're going well and dont want to stop;
+- Have a separate section for incomplete tasks.
 
 - Default time is actually correct.
 
 - People can edit the distraction count themselves.
-
-- Second, slightly louder sound if not noticed a minute later.
 
 - No Duplicate focus names
 
@@ -65,3 +63,6 @@ See [CHANGELOG](CHANGELOG.md)
 - Can easily copy over the data for the day.
 
 - Export data as a CSV.
+
+- Second, slightly louder sound if not noticed a minute later.
+

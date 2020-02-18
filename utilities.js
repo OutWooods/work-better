@@ -105,6 +105,27 @@ export const completeTask = (start, end, timeTaken, task) => {
     addCompletedTask(taskData, completedTasks.length)
 }
 
+export const extendTask = (start, end, timeTaken, task) => {
+    const taskData = {
+        start,
+        end,
+        timeTaken,
+        name: task ? task.name : 'Undefined task',
+        distractionCount,
+    }
+
+    const completedTasks = getCompletedTasks();
+    completedTasks.pop();
+    completedTasks.push(taskData);
+    const completedAreas = document.getElementById('completed-areas');
+    completedAreas.removeChild(completedAreas.lastChild);
+    setCompletedTasks(completedTasks);
+    storeTotalTimeWorked(completedTasks);
+    // TODO dependent on a global
+    distractionCount = 0;
+    addCompletedTask(taskData, completedTasks.length)
+}
+
 export const addAreaOfFocus = (area) => {
     const focus = document.createElement('div');
     const text = createElement('span', area.name)

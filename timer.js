@@ -1,9 +1,10 @@
-import { completeTask, formatTime } from './utilities.js';
+import { completeTask, formatTime, extendTask } from './utilities.js';
 
 window.addEventListener('load', () => {
     var timeLeft = 60000;
-    var milliseconds = 1800000;
+    var milliseconds = 60000;
     var isPaused = false;
+    var isExtended = false;
     var endTime = new Date();
     var startTime = new Date();
 
@@ -16,6 +17,9 @@ window.addEventListener('load', () => {
         stop.style.display = 'none';
         const pause = document.getElementById('pause');
         pause.style.display = 'none';
+        const extend = document.getElementById('extend');
+        extend.style.display = '';
+        event.target.style.display = '';
         event.target.style.display = '';
         document.title = 'COMPLETE';
         ding.play()
@@ -69,8 +73,15 @@ window.addEventListener('load', () => {
             const start = document.getElementById('start');
             start.style.display = '';
             event.target.style.display = 'none';
-            timeLeft = dateFns.differenceInMilliseconds(endTime, new Date());
-            completeTask(startTime, 'N/A', milliseconds - timeLeft, focusArea)
+            if (isExtended) {
+                timeLeft = dateFns.differenceInMilliseconds(new Date(), endTime);
+                extendTask(startTime, new Date(), milliseconds + timeLeft, focusArea)
+            }
+            else {
+                timeLeft = dateFns.differenceInMilliseconds(endTime, new Date());
+                completeTask(startTime, 'N/A', milliseconds - timeLeft, focusArea)
+            }
+
             return;
         }
 
@@ -88,6 +99,28 @@ window.addEventListener('load', () => {
             const start = document.getElementById('start');
             start.style.display = '';
             event.target.style.display = 'none';
+            return;
+        }
+
+    document.getElementById('extend').onclick =
+        (event) => {
+            if (!!countDown) {
+                clearInterval(countDown);
+            }
+
+            isExtended = true;
+
+            document.title = 'EXTENDED';
+            const stop = document.getElementById('stop');
+            stop.style.display = '';
+            const pause = document.getElementById('start');
+            pause.style.display = 'none';
+            event.target.style.display = 'none';
+            countDown = setInterval(() => {
+                const remainingTime = new Date() - endTime;
+
+                document.getElementById('timer').innerHTML = formatTime(remainingTime);
+            }, 500);
             return;
         }
 })
