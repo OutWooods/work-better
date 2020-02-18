@@ -6,6 +6,8 @@
 
 - Can extend time.
 
+- Show total time for each task type.
+
 ### [2019-02-17]
 
 #### Added

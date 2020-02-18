@@ -4,10 +4,6 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-- Show total time for each task type. (Including undefined).
-
--
-
 ## Planned
 
 - Have a separate section for incomplete tasks.
