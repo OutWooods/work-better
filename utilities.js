@@ -56,6 +56,18 @@ export const formatTime = (time) => {
 
 const formatDate = (time) => time.getHours() + ':' + time.getMinutes();
 
+const formatDay = (date) => {
+    if (dateFns.isToday(date)) {
+        return '';
+    }
+
+    if (dateFns.isYesterday(date)) {
+        return '(Yesterday) ';
+    }
+
+    return dateFns.format(date, '(DD/MM/YYYY) ');
+}
+
 export const storeTotalTimeWorked = (completedTasks) => {
     if (completedTasks === []) {
         document.getElementById('time-worked').innerHTML = '';
@@ -119,7 +131,7 @@ export const addAreaOfFocus = (area) => {
 export const addCompletedTask = (task, position) => {
     const completedTask = document.createElement('div');
 
-    const taskName = createElement('span', `${position}) ${task.name}`);
+    const taskName = createElement('span', `${position}) ${task.name} ${formatDay(task.start)}`);
     const startTime = createElement('span', ' Start: ' + formatDate(new Date(task.start)));
     const formattedEnd = task.end === 'N/A' ? task.end : formatDate(new Date(task.end));
     const endTime = createElement('span', ' End: ' + formattedEnd);
