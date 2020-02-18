@@ -4,8 +4,6 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-- Extend - if you're going well and dont want to stop;
-
 
 ## Planned
 

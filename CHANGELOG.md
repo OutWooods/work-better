@@ -4,6 +4,8 @@
 
 - Show date on task if it's not today.
 
+- Can extend time.
+
 ### [2019-02-17]
 
 #### Added
