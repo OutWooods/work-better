@@ -4,7 +4,6 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
-- Show date on task if it's not today.
 
 ## Planned
 

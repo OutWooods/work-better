@@ -1,3 +1,9 @@
+### [2019-02-18]
+
+#### Added
+
+- Show date on task if it's not today.
+
 ### [2019-02-17]
 
 #### Added
