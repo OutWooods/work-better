@@ -4,10 +4,9 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
+- Show date on task if it's not today.
 
 ## Planned
-
-- Show date on task if it's not today.
 
 - Have a separate section for incomplete tasks.
 
@@ -66,3 +65,4 @@ See [CHANGELOG](CHANGELOG.md)
 
 - Can easily copy over the data for the day.
 
+- Export data as a CSV.
