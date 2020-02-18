@@ -1,8 +1,21 @@
 import { getAreasOfFocus, setAreasOfFocus, getCompletedTasks, setCompletedTasks, setFocus } from './store.js';
 
+const calculateTotalCount = (id) => {
+    let length = 0;
+    getCompletedTasks().forEach(task => {
+        if (task.id === id) {
+            length += task.timeTaken;
+        }
+    });
+    return formatTime(length);
+}
+
 export const changeCount = (index, amount = 1) => {
     const areasOfFocus = getAreasOfFocus();
     const newCount = areasOfFocus[index].count + amount;
+
+    const timeSpent = calculateTotalCount(index);
+    document.getElementById(`time-${index}`).innerHTML = timeSpent;
 
     if (newCount >= 0) {
         areasOfFocus[index].count = newCount
@@ -89,17 +102,18 @@ export const completeTask = (start, end, timeTaken, task) => {
         end,
         timeTaken,
         name: task ? task.name : 'Undefined task',
+        id: task ? task.id : -1,
         distractionCount,
-    }
-
-    if (task) {
-        changeCount(task.id);
     }
 
     const completedTasks = getCompletedTasks();
     completedTasks.push(taskData);
     setCompletedTasks(completedTasks);
     storeTotalTimeWorked(completedTasks);
+
+    if (task) {
+        changeCount(task.id);
+    }
     // TODO dependent on a global
     distractionCount = 0;
     addCompletedTask(taskData, completedTasks.length)
@@ -121,6 +135,10 @@ export const extendTask = (start, end, timeTaken, task) => {
     completedAreas.removeChild(completedAreas.lastChild);
     setCompletedTasks(completedTasks);
     storeTotalTimeWorked(completedTasks);
+
+    if (task) {
+        changeCount(task.id, 0);
+    }
     // TODO dependent on a global
     distractionCount = 0;
     addCompletedTask(taskData, completedTasks.length)
@@ -137,14 +155,21 @@ export const addAreaOfFocus = (area) => {
     const countName = createElement('span', ' count: ');
     const count = createElement('span', '0');
     count.id = `count-${area.id}`
+    const timeSpent = createElement('span', ' time: ');
+    const time = createElement('span', '0');
+    time.id = `time-${area.id}`
 
     focus.appendChild(text);
     focus.appendChild(countName);
     focus.appendChild(count);
+    focus.appendChild(timeSpent);
+    focus.appendChild(time);
     focus.appendChild(plusButton);
     focus.appendChild(minusButton);
     focus.appendChild(setAsFocus);
     document.getElementById('focus-areas').appendChild(focus);
+
+    changeCount(area.id, 0);
 
     document.getElementById('new-focus').value = '';
 }

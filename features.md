@@ -4,10 +4,11 @@ See [CHANGELOG](CHANGELOG.md)
 
 ## In progress
 
+- Show total time for each task type. (Including undefined).
+
+-
 
 ## Planned
-
-- Show total time for each task type. (Including undefined).
 
 - Have a separate section for incomplete tasks.
 
@@ -21,8 +22,9 @@ See [CHANGELOG](CHANGELOG.md)
 
 - Minimal links should be hidden on first load.
 
-- Check distraction count is working
+- Check distraction count is working.
 
+- Time rounding discrepencies.
 
 ### Design
 

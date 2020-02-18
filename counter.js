@@ -1,4 +1,4 @@
-import { changeCount, createButton, createElement, addAreaOfFocus } from './utilities.js';
+import { addAreaOfFocus } from './utilities.js';
 import { getAreasOfFocus, setAreasOfFocus } from './store.js';
 
 window.addEventListener('load', () => {
