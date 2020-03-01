@@ -1,8 +1,8 @@
 import { completeTask, formatTime, extendTask } from './utilities.js';
 
 window.addEventListener('load', () => {
-    var timeLeft = 60000;
-    var milliseconds = 60000;
+    var timeLeft = 1800000;
+    var milliseconds = 1800000;
     var isPaused = false;
     var isExtended = false;
     var endTime = new Date();
