@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
         clearInterval(countDown);
         completeTask(startTime, endTime, milliseconds, focusArea)
         const ding = new Audio('type-writer-ding.wav');
-        document.getElementById("timer").innerHTML = 'COMPLETE';
+        document.getElementById("timer").innerHTML = 'Task complete (though if you want to extend, you can)';
         const stop = document.getElementById('stop');
         stop.style.display = 'none';
         const pause = document.getElementById('pause');
@@ -78,7 +78,7 @@ window.addEventListener('load', () => {
             }
             else {
                 timeLeft = dateFns.differenceInMilliseconds(endTime, new Date());
-                completeTask(startTime, 'N/A', milliseconds - timeLeft, focusArea)
+                completeTask(startTime, new Date(), milliseconds - timeLeft, focusArea)
             }
 
             return;

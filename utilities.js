@@ -139,8 +139,7 @@ export const addCompletedTask = (task, position) => {
 
     const taskName = createElement('span', `${position}) ${task.name} ${formatDay(task.start)},`);
     const startTime = createElement('span', ' Start: ' + formatDate(new Date(task.start)) + ',');
-    const formattedEnd = task.end === 'N/A' ? task.end + ',' : formatDate(new Date(task.end)) + ',';
-    const endTime = createElement('span', ' End: ' + formattedEnd + ',');
+    const endTime = createElement('span', ' End: ' + formatDate(new Date(task.end)) + ',');
     const taskLength = createElement('span', ' Length: ' + formatTime(task.timeTaken) + ',');
     const distractions = createElement('span', ' Distractions: ' + task.distractionCount);
 
