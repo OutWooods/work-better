@@ -10,6 +10,13 @@
 
 - Updated site text to be more practical
 
+- Improved completed timer message
+
+#### Fixed
+
+ - Says Paused...when paused
+
+
 ### [2019-02-18]
 
 #### Added

@@ -93,7 +93,7 @@ window.addEventListener('load', () => {
             isPaused = true;
             timeLeft = dateFns.differenceInMilliseconds(endTime, new Date());
 
-            document.getElementById("timer").innerHTML = "STOPPED";
+            document.getElementById("timer").innerHTML = 'PAUSED';
             document.title = 'PAUSED';
             const start = document.getElementById('start');
             start.style.display = '';
