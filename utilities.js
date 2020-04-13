@@ -1,34 +1,5 @@
 import { getAreasOfFocus, setAreasOfFocus, getCompletedTasks, setCompletedTasks, setFocus } from './store.js';
 
-const calculateTotalCount = (id) => {
-    let length = 0;
-    getCompletedTasks().forEach(task => {
-        if (task.id === id) {
-            length += task.timeTaken;
-        }
-    });
-    return formatTime(length);
-}
-
-export const changeCount = (index, amount = 1) => {
-    const areasOfFocus = getAreasOfFocus();
-    const newCount = areasOfFocus[index].count + amount;
-
-    const timeSpent = calculateTotalCount(index);
-    document.getElementById(`time-${index}`).innerHTML = timeSpent;
-
-    if (newCount >= 0) {
-        areasOfFocus[index].count = newCount
-        setAreasOfFocus(areasOfFocus);
-        document.getElementById(`count-${index}`).innerHTML = areasOfFocus[index].count;
-        return;
-    }
-
-    areasOfFocus[index].count = 0;
-    setAreasOfFocus(areasOfFocus);
-    document.getElementById(`count-${index}`).innerHTML = 0;
-}
-
 export const createElement = (type, text) => {
     const element = document.createElement(type);
     element.innerHTML = text;
@@ -71,7 +42,7 @@ const formatDate = (time) => time.getHours() + ':' + time.getMinutes();
 
 const formatDay = (date) => {
     if (dateFns.isToday(date)) {
-        return '';
+        return '(Today)';
     }
 
     if (dateFns.isYesterday(date)) {
@@ -111,10 +82,6 @@ export const completeTask = (start, end, timeTaken, task) => {
     setCompletedTasks(completedTasks);
     storeTotalTimeWorked(completedTasks);
 
-    if (task) {
-        changeCount(task.id);
-    }
-    // TODO dependent on a global
     distractionCount = 0;
     addCompletedTask(taskData, completedTasks.length)
 }
@@ -136,9 +103,6 @@ export const extendTask = (start, end, timeTaken, task) => {
     setCompletedTasks(completedTasks);
     storeTotalTimeWorked(completedTasks);
 
-    if (task) {
-        changeCount(task.id, 0);
-    }
     // TODO dependent on a global
     distractionCount = 0;
     addCompletedTask(taskData, completedTasks.length)
@@ -148,8 +112,6 @@ export const addAreaOfFocus = (area) => {
     const focus = document.createElement('div');
     const text = createElement('span', area.name)
 
-    const plusButton = createButton(() => { changeCount(area.id) }, { feather: 'plus' })
-    const minusButton = createButton(() => { changeCount(area.id, -1) }, { feather: 'minus' })
     const setAsFocus = createButton(() => { setFocus(area.id) }, { innerHTML: 'Set as focus' })
 
     const countName = createElement('span', ' count: ');
@@ -169,19 +131,17 @@ export const addAreaOfFocus = (area) => {
     focus.appendChild(setAsFocus);
     document.getElementById('focus-areas').appendChild(focus);
 
-    changeCount(area.id, 0);
-
     document.getElementById('new-focus').value = '';
 }
 
 export const addCompletedTask = (task, position) => {
     const completedTask = document.createElement('div');
 
-    const taskName = createElement('span', `${position}) ${task.name} ${formatDay(task.start)}`);
-    const startTime = createElement('span', ' Start: ' + formatDate(new Date(task.start)));
-    const formattedEnd = task.end === 'N/A' ? task.end : formatDate(new Date(task.end));
-    const endTime = createElement('span', ' End: ' + formattedEnd);
-    const taskLength = createElement('span', ' Length: ' + formatTime(task.timeTaken));
+    const taskName = createElement('span', `${position}) ${task.name} ${formatDay(task.start)},`);
+    const startTime = createElement('span', ' Start: ' + formatDate(new Date(task.start)) + ',');
+    const formattedEnd = task.end === 'N/A' ? task.end + ',' : formatDate(new Date(task.end)) + ',';
+    const endTime = createElement('span', ' End: ' + formattedEnd + ',');
+    const taskLength = createElement('span', ' Length: ' + formatTime(task.timeTaken) + ',');
     const distractions = createElement('span', ' Distractions: ' + task.distractionCount);
 
     completedTask.appendChild(taskName);

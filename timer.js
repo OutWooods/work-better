@@ -20,7 +20,6 @@ window.addEventListener('load', () => {
         const extend = document.getElementById('extend');
         extend.style.display = '';
         event.target.style.display = '';
-        event.target.style.display = '';
         document.title = 'COMPLETE';
         ding.play()
     }

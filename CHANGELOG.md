@@ -1,3 +1,11 @@
+### [2019-04-13]
+
+#### Changed
+
+- Removed the task counter, as this was wasn't useful
+
+- Updated site text to be more practical
+
 ### [2019-02-18]
 
 #### Added
