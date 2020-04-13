@@ -1,5 +1,9 @@
 ### [2019-04-13]
 
+#### Added
+
+- Comma Separated values to the tasks completed, easy to save in CSV
+
 #### Changed
 
 - Removed the task counter, as this was wasn't useful
