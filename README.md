@@ -39,3 +39,13 @@ CSS is in utility style following [tailwind](https://tailwindcss.com/) conventio
 3. Go to the URL it suggests
 
 4. Done!
+
+
+# work cycles app
+
+a) Add a stop button for time after normal time
+b) Update text - add more kind messaging. It doesn't show the time so you can't count down the clock so easily.
+c) Add commas so you could copy data to spreadsheet
+d) Each day, have a total time
+e) Mark today as Today
+f) Fix total time for each task - and remove the + and - for task counts
