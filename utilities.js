@@ -126,8 +126,6 @@ export const addAreaOfFocus = (area) => {
     focus.appendChild(count);
     focus.appendChild(timeSpent);
     focus.appendChild(time);
-    focus.appendChild(plusButton);
-    focus.appendChild(minusButton);
     focus.appendChild(setAsFocus);
     document.getElementById('focus-areas').appendChild(focus);
 
